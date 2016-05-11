@@ -5,14 +5,16 @@ int[] undo = {0, 0};
 float fps;
 boolean PvP = true;
 
-ChildApplet stats;
+Stats stats;
+Chat chat;
 
 void settings() {
   size(800, 600);
 }
 void setup() {
   surface.setTitle("Connect 4 Server");
-  stats = new ChildApplet();
+  stats = new Stats();
+  chat = new Chat();
   for (int x = 0; x <= width; x += width/7) { 
     line(x, 0, x, height);
   } 

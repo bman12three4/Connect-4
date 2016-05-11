@@ -1,5 +1,5 @@
-class ChildApplet extends PApplet {
-  public ChildApplet() {
+class Stats extends PApplet {
+  public Stats() {
     super();
     PApplet.runSketch(new String[]{this.getClass().getName()}, this);
   }
