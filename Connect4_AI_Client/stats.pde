@@ -32,13 +32,7 @@ class ChildApplet extends PApplet {
     fill(0, 0, 0);
     text(ip, 80, 80);
     //draw the button to enter the IP
-    textSize(24);
-    fill(200, 200, 200);
-    stroke(100, 100, 100);
-    rect(20, 100, 160, 40);
-    fill(0, 0, 0);
-    text("Enter IP", 80, 120);
-    stroke(255, 255, 255);
+    drawButton(200,200,200);
   }
 
   void keyPressed() {
@@ -57,14 +51,14 @@ class ChildApplet extends PApplet {
     if (mouseX > 20 && mouseX < 200) {
       if (mouseY > 100 && mouseY < 140) {
         ipEntered = true;
-        drawDarkButton();
+        drawButton(150,150,150);
       }
     }
   }
 
-  void drawDarkButton() {
+  void drawButton(int r, int g, int b) {
     textSize(24);
-    fill(150, 150, 150);
+    fill(r, g, b);
     stroke(100, 100, 100);
     rect(20, 100, 160, 40);
     fill(0, 0, 0);
