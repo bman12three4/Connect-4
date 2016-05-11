@@ -52,4 +52,11 @@ class ChildApplet extends PApplet {
       ip = ip + key;
     }
   }
-}
+
+  void mousePressed() {
+    if (mouseX > 20 && mouseX < 200) {
+      if (mouseY > 100 && mouseY < 140) {
+        System.out.println("Confirmed");
+      }
+    }
+  }
