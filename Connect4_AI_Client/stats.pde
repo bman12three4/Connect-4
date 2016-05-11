@@ -56,15 +56,19 @@ class ChildApplet extends PApplet {
   void mousePressed() {
     if (mouseX > 20 && mouseX < 200) {
       if (mouseY > 100 && mouseY < 140) {
-        System.out.println("Confirmed");
-        textSize(24);
-        fill(150, 150, 150);
-        stroke(100, 100, 100);
-        rect(20, 100, 160, 40);
-        fill(0, 0, 0);
-        text("Enter IP", 80, 120);
-        stroke(255, 255, 255);
+        ipEntered = true;
+        drawDarkButton();
       }
     }
+  }
+
+  void drawDarkButton() {
+    textSize(24);
+    fill(150, 150, 150);
+    stroke(100, 100, 100);
+    rect(20, 100, 160, 40);
+    fill(0, 0, 0);
+    text("Enter IP", 80, 120);
+    stroke(255, 255, 255);
   }
 }

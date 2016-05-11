@@ -82,7 +82,7 @@ void a(int x) {
 void draw() {
   if (ipEntered) {
     c = new Client(this, ip, 12345);
-
+    System.out.println(ip);
     //Horizontal
     if (c.available() > 0 && counter % 2 == 0) {
       input = c.readString();
