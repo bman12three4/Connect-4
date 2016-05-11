@@ -5,7 +5,7 @@ class Chat extends PApplet {
   }
 
   void settings() {
-    size(400, 100);
+    size(400, 120);
   }
 
   void setup() {
@@ -14,11 +14,16 @@ class Chat extends PApplet {
   }
 
   void draw() {
+    fill(255,255,255);
+    stroke(255,255,255);
+    rect(0,0,400,120);
+    fill(0,0,0);
     textSize(20);
-    for (int i= 0; i < 5; i++) {
-      text(chatMessages[i], 10, (20*i)+15);
+    for (int i= 4; i >= 0; i--) {
+      text(chatMessages[i], 10, (20*i)+5);
       System.out.println(chatMessages[i]);
     }
+    text(chatType, 10, 105);
   }
 
   void keyPressed() {
@@ -30,19 +35,24 @@ class Chat extends PApplet {
       chatType = "";
     } else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
       chatType = chatType + key;
+    } else if (keyCode == SHIFT){
+      shiftChat();
+      System.out.println("shifting");
     }
   }
 
   void shiftChat() {
-    chatTemp[0] = chatMessages[0];
-    chatMessages[0] = chatType;
-    chatTemp[1] = chatMessages[1];
-    chatMessages[1] = chatTemp[0];
-    chatTemp[0] = chatMessages[2];
-    chatMessages[2] = chatTemp[1];
+    chatTemp[0] = chatMessages[4];
+    chatMessages[4] = chatType;
+    chatType = "";
     chatTemp[1] = chatMessages[3];
     chatMessages[3] = chatTemp[0];
-    chatTemp[0] = chatMessages[4];
-    chatMessages[4] = chatTemp[1];
+    chatTemp[0] = chatMessages[2];
+    chatMessages[2] = chatTemp[1];
+    chatTemp[1] = chatMessages[1];
+    chatMessages[1] = chatTemp[0];
+    chatTemp[0] = chatMessages[0];
+    chatMessages[0] = chatTemp[1];
+    
   }
 }

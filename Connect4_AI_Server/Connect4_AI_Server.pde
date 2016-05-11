@@ -4,9 +4,9 @@ int winner = 0;
 int[] undo = {0, 0};
 float fps;
 boolean PvP = true;
-String[] chatMessages = new String[5];
+String[] chatMessages = {"","","","",""};
 String[] chatTemp = new String[2];
-String chatType;
+String chatType = "";
 
 Stats stats;
 Chat chat;
