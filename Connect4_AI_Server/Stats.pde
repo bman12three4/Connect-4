@@ -13,6 +13,7 @@ class ChildApplet extends PApplet{
     fill(0,0,0);
     textSize(24);
     text("Turn: ", 20, 20);
+    text("Ping: ", 20, 40);
   }
   
   public void draw(){
