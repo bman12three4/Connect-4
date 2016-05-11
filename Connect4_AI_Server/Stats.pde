@@ -4,11 +4,13 @@ class ChildApplet extends PApplet{
     PApplet.runSketch(new String[]{this.getClass().getName()}, this);
   }
   
-  public void settings(){
+  void settings(){
     size(200, 500);
   }
   
-  public void setup(){
+  void setup(){
+    stroke(255,255,255);
+    surface.setTitle("Stats");
     background(255,255,255);
     fill(0,0,0);
     textSize(24);
@@ -16,9 +18,9 @@ class ChildApplet extends PApplet{
     text("Ping: ", 20, 60);
   }
   
-  public void draw(){
+  void draw(){
     fill(255,255,255);
-    rect(0,0,100,20);
+    rect(0,0,200,20);
     fill(0,0,0);
     text(int(fps) + " fps", 20, 20);
   }
