@@ -12,11 +12,14 @@ class ChildApplet extends PApplet{
     background(255,255,255);
     fill(0,0,0);
     textSize(24);
-    text("Turn: ", 20, 20);
-    text("Ping: ", 20, 40);
+    text("Turn: ", 20, 40);
+    text("Ping: ", 20, 60);
   }
   
   public void draw(){
-    
+    fill(255,255,255);
+    rect(0,0,100,20);
+    fill(0,0,0);
+    text(int(fps) + " fps", 20, 20);
   }
 }
