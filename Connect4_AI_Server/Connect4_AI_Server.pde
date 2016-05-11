@@ -5,6 +5,7 @@ int[] undo = {0, 0};
 float fps;
 boolean PvP = true;
 String[] chatMessages = {"","","","",""};
+int[][] chatColor = {{0,0,0},{0,0,0}};
 String[] chatTemp = new String[2];
 String chatType = "";
 boolean shift = false;
