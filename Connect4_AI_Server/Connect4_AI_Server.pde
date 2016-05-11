@@ -2,6 +2,7 @@ int[][] position = new int[8][7];
 int counter = 0;
 int winner = 0;
 int[] undo = {0, 0};
+float fps;
 boolean PvP = true;
 ChildApplet stats;
 
@@ -77,6 +78,7 @@ void a(int x){
 }
 void draw() {
   //Horizontal
+  fps = frameRate;
   c = s.available();
   if (c != null && counter % 2 == 1) {
     println("a");
