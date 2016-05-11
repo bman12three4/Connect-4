@@ -7,6 +7,7 @@ boolean PvP = true;
 String[] chatMessages = {"","","","",""};
 String[] chatTemp = new String[2];
 String chatType = "";
+boolean shift = false;
 
 Stats stats;
 Chat chat;

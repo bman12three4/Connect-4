@@ -14,16 +14,20 @@ class Chat extends PApplet {
   }
 
   void draw() {
-    fill(255,255,255);
-    stroke(255,255,255);
-    rect(0,0,400,120);
-    fill(0,0,0);
+    fill(255, 255, 255);
+    stroke(255, 255, 255);
+    rect(0, 0, 400, 120);
+    fill(0, 0, 0);
     textSize(20);
     for (int i= 4; i >= 0; i--) {
       text(chatMessages[i], 10, (20*i)+5);
-      System.out.println(chatMessages[i]);
     }
     text(chatType, 10, 105);
+    fill(200, 200, 200);
+    stroke(150, 150, 150);
+    rect(width-20, height-20, 20, 20);
+    fill(0, 0, 0);
+    stroke(255, 255, 255);
   }
 
   void keyPressed() {
@@ -35,10 +39,15 @@ class Chat extends PApplet {
       chatType = "";
     } else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
       chatType = chatType + key;
-    } else if (keyCode == SHIFT){
-      shiftChat();
-      System.out.println("shifting");
     }
+  }
+
+  void mouseClicked() {
+      if (mouseX > width-20 && mouseX < width) {
+        if (mouseY > height-20 && mouseY < height) {
+          shiftChat();
+        }
+      }
   }
 
   void shiftChat() {
@@ -53,6 +62,5 @@ class Chat extends PApplet {
     chatMessages[1] = chatTemp[0];
     chatTemp[0] = chatMessages[0];
     chatMessages[0] = chatTemp[1];
-    
   }
 }
