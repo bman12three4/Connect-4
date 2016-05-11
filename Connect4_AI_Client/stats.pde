@@ -24,7 +24,7 @@ class ChildApplet extends PApplet {
     fill(255, 255, 255);
     rect(0, 0, 200, 20);
     fill(0, 0, 0);
-    text(fps + " fps", 20, 20);
+    text(int(fps) + " fps", 20, 20);
     //draw the host IP
     textSize(12);
     fill(255, 255, 255);

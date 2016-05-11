@@ -80,6 +80,7 @@ void a(int x) {
   }
 }
 void draw() {
+  fps = frameRate;
   if (ipEntered) {
     c = new Client(this, ip, 12345);
     System.out.println(ip);
