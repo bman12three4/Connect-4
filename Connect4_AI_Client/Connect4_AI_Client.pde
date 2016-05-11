@@ -5,6 +5,7 @@ int[] undo = {0, 0};
 boolean PvP = true;
 String ip = "";
 Float fps;
+boolean ipEntered = false;
 
 ChildApplet stats;
 
@@ -25,7 +26,6 @@ void setup() {
       position[i][g]=0;
     }
   }
-  c = new Client(this,ip, 12345);
 }
 void mousePressed() {
   int x = 0;
@@ -80,6 +80,9 @@ void a(int x){
   }
 }
 void draw() {
+  if (ipEntered){
+     c = new Client(this,ip, 12345);
+  
   //Horizontal
   if (c.available() > 0 && counter % 2 == 0) {
       input = c.readString();
@@ -135,5 +138,6 @@ void draw() {
   }
   if (PvP == false && counter % 2 == 0) {
     AI();
+  }
   }
 }

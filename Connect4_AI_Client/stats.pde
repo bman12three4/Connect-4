@@ -27,6 +27,12 @@ class ChildApplet extends PApplet{
     textSize(12);
     text(ip, 80, 80);
     textSize(24);
+    fill(200,200,200);
+    stroke(100,100,100);
+    rect(20, 100, 160, 40);
+    fill(0,0,0);
+    text("Enter IP", 80, 120);
+    stroke(255,255,255);
   }
   
   void keyPressed() {
