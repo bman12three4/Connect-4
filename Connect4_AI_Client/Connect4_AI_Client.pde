@@ -3,8 +3,17 @@ int counter = 0;
 int winner = 0;
 int[] undo = {0, 0};
 boolean PvP = true;
-void setup() {
+String ip = "";
+Float fps;
+
+ChildApplet stats;
+
+void settings(){
   size(800, 600);
+}
+void setup() {
+  surface.setTitle("Connect 4 Client");
+  stats = new ChildApplet();
   for (int x = 0; x <= width; x += width/7) { 
     line(x, 0, x, height);
   } 
@@ -16,7 +25,7 @@ void setup() {
       position[i][g]=0;
     }
   }
-  c = new Client(this,"10.10.45.128", 12345);
+  c = new Client(this,ip, 12345);
 }
 void mousePressed() {
   int x = 0;
