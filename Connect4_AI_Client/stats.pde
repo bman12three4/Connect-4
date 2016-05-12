@@ -4,15 +4,24 @@ class ChildApplet extends PApplet {
     PApplet.runSketch(new String[]{this.getClass().getName()}, this);
   }
 
+<<<<<<< HEAD
   void settings() {
     size(200, 500);
   }
 
   void setup() {
+=======
+  public void settings() {
+    size(200, 500);
+  }
+
+  public void setup() {
+>>>>>>> origin/experimental
     stroke(255, 255, 255);
     surface.setTitle("Stats");
     background(255, 255, 255);
     fill(0, 0, 0);
+<<<<<<< HEAD
     textSize(24);
     text("Turn: ", 20, 40);
     text("Ping: ", 20, 60);
@@ -37,12 +46,31 @@ class ChildApplet extends PApplet {
     fill(255, 255, 255);
     rect(80, 60, 200, 20);
     fill(0, 0, 0);
+=======
+  }
+
+  public void draw() {
+    background(255, 255, 255);
+    text("Turn: ", 20, 40);
+    text("Ping: ", 20, 60);
+    text("Host: ", 20, 80);
+    text(fps + " fps", 20, 20);
+    if (counter % 2 == 0) {
+      text("Yellow", 100, 40);
+    } else {
+      text("Red", 100, 40);
+    }
+>>>>>>> origin/experimental
     text(ip, 80, 80);
     //draw the button to enter the IP
     drawButton(200,200,200);
   }
 
+<<<<<<< HEAD
   void keyPressed() {
+=======
+  public void keyPressed() {
+>>>>>>> origin/experimental
     if (keyCode == BACKSPACE) {
       if (ip.length() > 0) {
         ip = ip.substring(0, ip.length()-1);
@@ -51,6 +79,7 @@ class ChildApplet extends PApplet {
       ip = "";
     } else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT) {
       ip = ip + key;
+<<<<<<< HEAD
     }
   }
 
@@ -73,4 +102,8 @@ class ChildApplet extends PApplet {
     text("Enter IP", 80, 120);
     stroke(255, 255, 255);
   }
+=======
+    }
+  }
+>>>>>>> origin/experimental
 }
