@@ -4,24 +4,22 @@ class ChildApplet extends PApplet {
     PApplet.runSketch(new String[]{this.getClass().getName()}, this);
   }
 
-<<<<<<< HEAD
   void settings() {
     size(200, 500);
   }
 
   void setup() {
-=======
+  }
+
   public void settings() {
     size(200, 500);
   }
 
   public void setup() {
->>>>>>> origin/experimental
     stroke(255, 255, 255);
     surface.setTitle("Stats");
     background(255, 255, 255);
     fill(0, 0, 0);
-<<<<<<< HEAD
     textSize(24);
     text("Turn: ", 20, 40);
     text("Ping: ", 20, 60);
