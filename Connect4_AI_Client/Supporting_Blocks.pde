@@ -27,8 +27,8 @@ void clearAImem() {
     AIrows[i] = 0;
   }
 }
-void clearPAImem() {
-  for (int i = 0; i <= 6; i ++) {
+void clearPAImem(){
+   for (int i = 0; i <= 6; i ++) {
     PAIrows[i] = 0;
   }
 }
@@ -77,7 +77,7 @@ void Pactivateo(int x) {
   }
 }
 
-void refresh() {
+void refresh(){
   for (int i = 1; i <= 7; i++) {
     for (int g=1; g<=6; g++) {
       predictum[i][g]=position[i][g];
@@ -98,7 +98,7 @@ void CheckAIbounds() {
   }
 }
 int[] activatei(int x) {
-  int[] pos = {0, 0};
+  int[] pos = {0,0};
   for (int i = 1; i <= 6; i++) {
     if (position[x][i] ==0) {
       position[x][i] = 2;
@@ -110,7 +110,7 @@ int[] activatei(int x) {
   return pos;
 }
 int[] activateia(int x) {
-  int[] pos = {0, 0};
+  int[] pos = {0,0};
   for (int i = 1; i <= 6; i++) {
     if (position[x][i] ==0) {
       position[x][i] = 1;
@@ -151,8 +151,8 @@ int yTovictory() {
   }
   return activatum;
 }
-void refreshscores() {
-  for (int i = 0; i <= 6; i ++) {
+void refreshscores(){
+  for (int i = 0; i <= 6; i ++){
     scoring[i] = 0;
   }
 }

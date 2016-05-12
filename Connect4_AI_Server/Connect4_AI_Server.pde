@@ -4,22 +4,14 @@ int winner = 0;
 int[] undo = {0, 0};
 float fps;
 boolean PvP = true;
-String[] chatMessages = {"","","","",""};
-int[][] chatColor = {{0,0,0},{0,0,0}};
-String[] chatTemp = new String[2];
-String chatType = "";
-boolean shift = false;
+ChildApplet stats;
 
-Stats stats;
-Chat chat;
-
-void settings() {
-  size(800, 600);
+void settings(){
+    size(800, 600);
 }
 void setup() {
-  surface.setTitle("Connect 4 Server");
-  stats = new Stats();
-  chat = new Chat();
+  surface.setTitle("Connect 4");
+  stats = new ChildApplet();
   for (int x = 0; x <= width; x += width/7) { 
     line(x, 0, x, height);
   } 
@@ -36,29 +28,29 @@ void setup() {
 void mousePressed() {
   int x = 0;
   if (counter % 2 == 0) {
-    x = mouseX;
-    if (x<=width/7 && x>0) {
-      x = 1;
-    } else if (x<=width/7*2 && x>=width/7) {
-      x = 2;
-    } else if (x<=width/7*3 && x>=width/7) {
-      x = 3;
-    } else if (x<=width/7*4 && x>=width/7) {
-      x = 4;
-    } else if (x<=width/7*5 && x>=width/7) {
-      x = 5;
-    } else if (x<=width/7*6 && x>=width/7) {
-      x = 6;
-    } else if (x<=width/7*7 && x>=width/7) {
-      x = 7;
-    }
-    s.write(x+" "+"\n");
-    counter++;
-  } else {
+     x = mouseX;
+  if (x<=width/7 && x>0) {
+    x = 1;
+  } else if (x<=width/7*2 && x>=width/7) {
+    x = 2;
+  } else if (x<=width/7*3 && x>=width/7) {
+    x = 3;
+  } else if (x<=width/7*4 && x>=width/7) {
+    x = 4;
+  } else if (x<=width/7*5 && x>=width/7) {
+    x = 5;
+  } else if (x<=width/7*6 && x>=width/7) {
+    x = 6;
+  } else if (x<=width/7*7 && x>=width/7) {
+    x = 7;
+  }
+  s.write(x+" "+"\n");
+  counter++;
+  }else{
   }
   a(x);
 }
-void a(int x) {
+void a(int x){
   ellipseMode(CENTER);
   if (counter % 2 == 1) {
     for (int i = 1; i <= 6; i++) {
@@ -90,13 +82,13 @@ void draw() {
   c = s.available();
   if (c != null && counter % 2 == 1) {
     println("a");
-    input = c.readString();
+      input = c.readString();
     input = input.substring(0, input.indexOf("\n"));
     data = int(split(input, ' '));
     int x = data[0];
     counter ++;
     a(x);
-  }
+    }
   for (int i = 0; i<=3; i++) {
     for (int g = 0; g <= 5; g++) {
       if (position[i+1][g+1] ==position[i+2][g+1] && position[i+3][g+1]==position[i+1][g+1]&&position[i+4][g+1]==position[i+1][g+1]&&position[i+1][g+1]==1) {
