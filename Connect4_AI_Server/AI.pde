@@ -10,10 +10,10 @@ void AI() {
   CheckBounds(); 
   if (counter % 2 == 0) {
     int posa = rTovictory();
-    int pos = yTovictory();
-    if (pos != 0) {
-      posa = pos;
-    }
+     int pos = yTovictory();
+     if (pos != 0){
+       posa = pos;
+     }
     println("1 step:"+posa);
     //println(posa);
     if ( posa != 0) {
@@ -21,7 +21,7 @@ void AI() {
       counter++;
     }
   }
-  if (counter % 2 == 0) {
+  if (counter % 2 == 0){
     LV1();
     LV2D();
     LV2A();
